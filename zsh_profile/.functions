@@ -1,0 +1,48 @@
+prep-commit() {
+	git add .
+	pre-commit
+	git add .
+	pre-commit
+}
+
+set_branch() {
+    
+}
+rebase() {
+    if [ $# -eq 0 ] 
+    then 
+        BRANCH="master"
+	else
+		BRANCH=$1
+	fi 
+	git fetch origin $BRANCH && git rebase origin/$BRANCH
+}
+
+copy() {
+    cat $1 | pbcopy
+}
+
+
+go() {
+    cd ~/projects/$1
+}
+
+parse_git_branch() {
+    git branch 2> /dev/null | sed -n -e 's/^\* \(.*\)/[\1]/p' | sed 's/\[//' | sed 's/\]$//'
+}
+
+merge() {
+    CURR_BRANCH=$(parse_git_branch)
+    if [ $# -eq 0 ] 
+    then 
+        BRANCH="master"
+	else
+		BRANCH=$1
+	fi
+    echo "Merging branch '$CURR_BRANCH' into '$BRANCH'"
+    sleep 2
+    git checkout $BRANCH && \
+    git reset --hard origin/$BRANCH && \
+    git merge --ff-only $CURR_BRANCH && \
+    git push
+}

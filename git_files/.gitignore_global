@@ -1,0 +1,6 @@
+.DS_Store
+*.swp
+.python-version
+.vscode/
+scratch*
+send_to_lambda*
