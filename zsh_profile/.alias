@@ -1,6 +1,6 @@
 
 alias s='git status'
-alias aws_sso='~/code/internal-tools/control_tower_sso/x86_control_tower_sso/control_tower_sso'
+alias aws_sso='~/workspace/internal-tools/control_tower_sso/arm_control_tower_sso/control_tower_sso'
 alias rm_pycache='find . | grep -E "(/__pycache__$|\.pyc$|\.pyo$)" | xargs rm -rf'
 alias vi='nvim'
 alias gap='git commit --amend --no-edit && git push -f'
