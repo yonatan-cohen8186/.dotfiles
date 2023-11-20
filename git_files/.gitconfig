@@ -4,8 +4,8 @@
 	process = git-lfs filter-process
 	required = true
 [user]
-	name = Ben Schreiber
-	email = ben.schreiber@pagaya.com
+	name = Yonatan Cohen
+	email = yonatan.cohen@pagaya.com
 [pull]
 	rebase = true
 [core]
