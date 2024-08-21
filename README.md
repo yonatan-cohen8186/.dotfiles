@@ -41,8 +41,7 @@ Follow these step-by-step instructions to set up a development environment:
 
 ## Onboarding to Luma
 
-1. Modify the file `~/dotfiles/sh_files/variables.sh` to include your personal details.
-2. Execute the following commands:
+1. Execute the following commands:
 
     ```bash
    ~/.dotfiles/sh_files/luma_onboarding.sh
