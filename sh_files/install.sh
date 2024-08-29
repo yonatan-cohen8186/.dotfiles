@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source ~/.dotfiles/sh_files/variables.sh
+
 # Function to create a symlink with a confirmation prompt
 create_symlink() {
     local target="$1"
@@ -23,6 +25,11 @@ create_symlink() {
     else
         ln -s "$target" "$link_name"
         echo "Created symlink: $link_name -> $target"
+    fi
+
+    if [[ "$link_name" == *".gitconfig" ]]; then
+        git config --global user.name "$GIT_USER_NAME"
+        git config --global user.email "$GIT_USER_EMAIL"
     fi
 }
 

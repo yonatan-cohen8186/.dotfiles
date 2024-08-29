@@ -4,8 +4,8 @@
 	process = git-lfs filter-process
 	required = true
 [user]
-    name = ${GIT_USER_NAME}
-    email = ${GIT_USER_EMAIL}
+	name = 'Yonatan Cohen'
+	email = 'yonatan.cohen@pagaya.com'
 [pull]
 	rebase = true
 [core]

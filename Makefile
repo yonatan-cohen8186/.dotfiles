@@ -10,7 +10,7 @@ brew_install:
 	curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | bash;
 	
 brew_packages:
-	brew install pyenv pyenv-virtualenv git vim neovim jq node
+	brew install pyenv pyenv-virtualenv git vim neovim jq node awscli
 
 brew_cask_packages:
 	brew install --cask iterm2 spotify whatsapp alt-tab font-fira-code
