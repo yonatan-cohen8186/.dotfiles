@@ -26,8 +26,7 @@ Follow these step-by-step instructions to set up a development environment:
    
    Before running the scripts, we need to ensure they have the necessary permissions. We use the `chmod` command to change the permissions of the files. The `+x` option makes the files executable.
    ```bash
-    chmod +x ~/.dotfiles/sh_files/variables.sh
-    chmod +x ~/.dotfiles/sh_files/install.sh
+    chmod +x ~/.dotfiles/sh_files/*.sh
     ~/.dotfiles/sh_files/install.sh
     ```
     Executing this script will create symbolic links to the dotfiles in your home directory and perform other necessary setup tasks.
@@ -44,7 +43,7 @@ Follow these step-by-step instructions to set up a development environment:
 1. Execute the following commands:
 
     ```bash
-   ~/.dotfiles/sh_files/luma_onboarding.sh
+   
     ```
 
 ## Usage

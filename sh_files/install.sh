@@ -7,22 +7,9 @@ create_symlink() {
     local target="$1"
     local link_name="$2"
 
-    if [ -L "$link_name" ]; then
-        echo "Link $link_name already exists."
-        read -p "Do you want to overwrite it? (y/n) " choice
-        case "$choice" in
-            y|Y )
-                echo "Overwriting $link_name."
-                ln -sf "$target" "$link_name"
-                ;;
-            n|N )
-                echo "Skipping $link_name."
-                ;;
-            * )
-                echo "Invalid choice. Skipping $link_name."
-                ;;
-        esac
-    else
+    ~/.dotfiles/sh_files/check_and_overwrite.sh "$link_name" "symlink $link_name"
+
+    if [ $? -eq 0 ]; then
         ln -s "$target" "$link_name"
         echo "Created symlink: $link_name -> $target"
     fi
