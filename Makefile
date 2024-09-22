@@ -6,6 +6,8 @@ brew_install:
 	@echo "Installing Homebrew..."
 	sudo true;
 	curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | bash;
+	(echo; echo 'eval "$(/opt/homebrew/bin/brew shellenv)"') >> /Users/nir.weber/.zprofile
+	eval "$(/opt/homebrew/bin/brew shellenv)"
 
 brew_packages:
 	@echo "Installing brew packages..."
@@ -36,6 +38,7 @@ pyenv_install_default_python:
 	echo "Installing the default Python version ($$DEFAULT_PYTHON_VERSION) with pyenv..."; \
 	pyenv install $$DEFAULT_PYTHON_VERSION; \
 	pyenv global $$DEFAULT_PYTHON_VERSION
+	python -m ensurepip --upgrade
 
 oh-my-zsh:
 	@echo "Installing oh-my-zsh..."
