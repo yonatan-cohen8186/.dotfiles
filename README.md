@@ -31,7 +31,16 @@ Follow these step-by-step instructions to set up a development environment:
     ```
     Executing this script will create symbolic links to the dotfiles in your home directory and perform other necessary setup tasks.
 
-3. **Configure Personal Details**:
+3. **Run Make Commands**: After navigating to the `.dotfiles` directory, run the following make commands to set up various tools and configurations:
+    ```bash
+    cd ~/.dotfiles
+    make brew
+    make vim
+    make oh-my-zsh
+    ```
+    This will install Homebrew, Vim, and Oh My Zsh, and their respective packages and dependencies.
+
+4. **Configure Personal Details**:
 
     After making your changes, apply them by sourcing your shell configuration file:
     ```bash
@@ -40,17 +49,35 @@ Follow these step-by-step instructions to set up a development environment:
 
 ## Onboarding to Luma
 
-1. Execute the following commands:
-
+1. Execute the following command to set up the Luma environment:
     ```bash
-   
+    make luma_onboarding
     ```
+    This command will clone and set up various internal tools and repositories needed for Luma.
 
 ## Usage
 
-Once the dotfiles are installed, you can start using them with your tools. Here's how you can use some of the included dotfiles:
+Once the dotfiles are installed, you can start using them with your tools. Here are examples of how to use some of the included dotfiles:
 
-- `.mydotfile`: This dotfile performs functions X, Y, and Z. You can customize it by performing actions A, B, and C.
+- **`.zshrc`**: This configuration file customizes the Zsh shell. After installation, it will automatically be sourced when you open a terminal. You can add aliases, environment variables, and custom functions here. To apply changes immediately after editing, run:
+    ```bash
+    source ~/.zshrc
+    ```
+
+- **`.vimrc`**: This file configures Vim. It includes settings for appearance, keybindings, and plugins. To use the configurations, simply open Vim. If you make changes to `.vimrc`, they will be applied the next time you start Vim. To apply them immediately within Vim, run:
+    ```vim
+    :source ~/.vimrc
+    ```
+
+- **`aliases.sh`**: This file can contain custom shell aliases. For example:
+    ```bash
+    alias gst="git status"
+    alias ll="ls -la"
+    ```
+    After modifying this file, ensure it is sourced in your main shell configuration file (like `.zshrc`) to make the aliases available:
+    ```bash
+    source ~/.aliases.sh
+    ```
 
 ## Acknowledgments
 
